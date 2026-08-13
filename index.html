@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Amixa helpt mensen vanaf 18 jaar in België echte vriendschappen te vinden zonder dating, op basis van interesses, buurt en verbinding."
+    />
+    <title>Amixa | Echte vriendschappen in België</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="dev-modal hidden" id="devModal" aria-live="polite">
+      <div class="dev-modal-card">
+        <p class="dev-modal-kicker">Even een kleine update</p>
+        <h2>Leuk dat je dit al invulde, maar deze functie werkt nog niet.</h2>
+        <p>Feedback over deze eerste versie van Amixa? Mail naar info@amixa.be.</p>
+        <p>Kom later terug :)</p>
+        <button type="button" class="button button-primary" id="closeDevModal">Sluiten</button>
+      </div>
+    </div>
+
+    <button class="contrast-toggle" type="button" aria-label="Schakel hoog contrast in" aria-pressed="false" title="Hoog contrast">
+      👁
+    </button>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="#top" class="brand" aria-label="Amixa home">
+          <img src="amixa_logo_transparent.svg" alt="Amixa logo" class="brand-logo" />
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav" aria-label="Hoofdnavigatie">
+          <a href="#hoe-werkt-het">Hoe werkt het</a>
+          <a href="#waarom-amixa">Waarom Amixa</a>
+          <a href="neurodivergent.html" class="header-pill" aria-label="Neurodivergent?">Neurodivergent?</a>
+          <a href="sexualiteit-gender.html" class="header-pill" aria-label="Seksualiteit en gender">Seksualiteit en gender</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#join" class="button button-primary nav-button">Doe mee</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Vriendschap, niet dating</span>
+            <h1>Vind mensen in België die echt bij jou passen.</h1>
+            <p>
+              Een warme, inclusieve plek voor echte vriendschap in België, zonder dating,
+              met aandacht voor neurodiversiteit, gender, seksualiteit en respect.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#join" class="button button-primary">Doe mee</a>
+              <a href="#hoe-werkt-het" class="button button-secondary">Hoe werkt het</a>
+            </div>
+
+            <div class="hero-metrics">
+              <div>
+                <strong>Nieuw</strong>
+                <span>in België</span>
+              </div>
+              <div>
+                <strong>Warm</strong>
+                <span>en echt</span>
+              </div>
+              <div>
+                <strong>18+</strong>
+                <span>voor volwassenen</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Foto van vrienden die elkaar knuffelen">
+            <div class="hero-photo-card">
+              <img src="3 vrienden knuffelen.png" alt="Drie vrienden knuffelen en lachen" />
+
+              <div class="floating-badge top-left">
+                <span>Nieuw</span>
+                <strong>community</strong>
+              </div>
+
+              <div class="floating-badge bottom-right">
+                <span>In opbouw</span>
+                <strong>in België</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="hoe-werkt-het" class="section">
+        <div class="container">
+          <div class="section-heading narrow">
+            <span class="eyebrow">Hoe werkt het</span>
+            <h2>Zo groeit een echte connectie.</h2>
+          </div>
+
+          <div class="cards-grid three-col">
+            <article class="info-card">
+              <div class="icon">1</div>
+              <h3>Maak je profiel</h3>
+              <p>
+                Vertel kort iets over jezelf, je interesses en de sfeer die je zoekt.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <div class="icon">2</div>
+              <h3>Ontdek mensen in jouw buurt</h3>
+              <p>
+                Vind mensen met een vergelijkbare vibe, interesses en levensstijl.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <div class="icon">3</div>
+              <h3>Start iets echt</h3>
+              <p>
+                Plan een koffie, wandeling of een leuke activiteit en laat de vriendschap groeien.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt-bg">
+        <div class="container">
+          <div class="section-heading narrow">
+            <span class="eyebrow">Vriendschap</span>
+            <h2>Welke vorm van vriendschap past het best bij jou?</h2>
+          </div>
+
+          <div class="cards-grid two-col">
+            <article class="info-card">
+              <div class="icon">A</div>
+              <h3>Echt afspreken</h3>
+              <p>
+                Je wil mensen in het echt leren kennen. Afspreken om te wandelen, een koffie,
+                goede babbel, film of een nieuwe activiteit.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <div class="icon">B</div>
+              <h3>Puur online</h3>
+              <p>
+                Jij wil liever niet in het echt afspreken maar meer penmaatjes worden of
+                (video)bellen.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="waarom-amixa" class="section alt-bg">
+        <div class="container split-grid">
+          <div class="feature-copy">
+            <span class="eyebrow">Amixa</span>
+            <h2>Een plek om oprecht contact te maken.</h2>
+            <p>
+              Amixa is een community voor mensen die een natuurlijke, warme manier willen vinden
+              om vriendschappen op te bouwen in België.<br />
+              Geen druk, geen dating, alleen echte verbinding.
+            </p>
+
+            <ul class="check-list">
+              <li>Voor volwassenen vanaf 18 jaar</li>
+              <li>Gebaseerd op buurt, interesses en vibe</li>
+              <li>Voor mensen die echte vriendschap willen</li>
+              <li>Iedereen welkom, ongeacht geslacht, genderidentiteit, geaardheid, neurodiversiteit of beperking. Mensen blijven mensen.</li>
+            </ul>
+          </div>
+
+          <div class="feature-panel">
+            <div class="panel-card">
+              <div class="panel-header">
+                <span class="dot coral"></span>
+                <span class="dot gold"></span>
+                <span class="dot mint"></span>
+              </div>
+
+              <div class="panel-body quote-rotator-wrap">
+                <div class="quote-rotator" aria-live="polite">
+                  <div class="quote-rotator__slide is-active">
+                    <img
+                      src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80"
+                      alt="Koffie met twee mensen die praten"
+                    />
+                    <div class="quote-rotator__content">
+                      <p class="plain-copy">Een community in opbouw, met aandacht voor vertrouwen, rust en echte verbinding.</p>
+                      <span class="rotator-caption">Koffiedate • rustig ontmoeten</span>
+                    </div>
+                  </div>
+
+                  <div class="quote-rotator__slide">
+                    <img src="cinema.png" alt="Film scherm in de cinema" />
+                    <div class="quote-rotator__content">
+                      <p class="plain-copy">Een community in opbouw, met aandacht voor vertrouwen, rust en echte verbinding.</p>
+                      <span class="rotator-caption">Filmavond • samen kijken</span>
+                    </div>
+                  </div>
+
+                  <div class="quote-rotator__slide">
+                    <img src="escaperoom.png" alt="Bord met escaperoom" />
+                    <div class="quote-rotator__content">
+                      <p class="plain-copy">Een community in opbouw, met aandacht voor vertrouwen, rust en echte verbinding.</p>
+                      <span class="rotator-caption">Escaperoom • samen op avontuur</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gebieden" class="section">
+        <div class="container">
+          <div class="section-heading narrow">
+            <span class="eyebrow">Gebieden</span>
+            <h2>Amixa groeit door heel België.</h2>
+          </div>
+
+          <div class="regions-grid">
+            <div class="region-card">
+              <span>Brussel</span>
+              <strong>in groei</strong>
+            </div>
+            <div class="region-card">
+              <span>Antwerpen</span>
+              <strong>in groei</strong>
+            </div>
+            <div class="region-card">
+              <span>Gent</span>
+              <strong>in groei</strong>
+            </div>
+            <div class="region-card">
+              <span>Leuven</span>
+              <strong>in groei</strong>
+            </div>
+            <div class="region-card">
+              <span>Limburg</span>
+              <strong>in groei</strong>
+            </div>
+            <div class="region-card">
+              <span>Kortrijk</span>
+              <strong>in groei</strong>
+            </div>
+            <div class="region-card">
+              <span>Brugge</span>
+              <strong>in groei</strong>
+            </div>
+            <div class="region-card">
+              <span>Oostende</span>
+              <strong>in groei</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section testimonials">
+        <div class="container">
+          <div class="section-heading narrow">
+            <span class="eyebrow">Community</span>
+            <h2>Nieuw, warm en in groei.</h2>
+          </div>
+
+          <div class="cards-grid three-col testimonial-grid">
+            <article class="testimonial-card">
+              <p>Vrijwillige ontmoetingen, gedeelde interesses en een sfeer zonder druk.</p>
+              <footer>
+                <strong>Vriendschap</strong>
+                <span>zonder dating</span>
+              </footer>
+            </article>
+
+            <article class="testimonial-card">
+              <p>Een plek waar mensen elkaar vinden op basis van buurt, vibe en levensstijl.</p>
+              <footer>
+                <strong>Verbonden</strong>
+                <span>op een natuurlijke manier</span>
+              </footer>
+            </article>
+
+            <article class="testimonial-card">
+              <p>Amixa groeit stap voor stap, met aandacht voor echte verbinding.</p>
+              <footer>
+                <strong>Nieuw</strong>
+                <span>en groeiend</span>
+              </footer>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="join" class="section alt-bg">
+        <div class="container">
+          <div class="section-heading narrow">
+            <span class="eyebrow">Doe mee</span>
+            <h2>Maak je profiel aan.</h2>
+          </div>
+
+          <div class="signup-panel">
+            <form id="profile-form" class="signup-form">
+              <div class="form-row">
+                <label>
+                  <span>Naam</span>
+                  <input type="text" name="name" placeholder="Jouw nickname" required />
+                </label>
+
+                <label>
+                  <span>Leeftijd</span>
+                  <input type="number" name="age" min="18" placeholder="18" required />
+                </label>
+              </div>
+
+              <div class="form-row">
+                <label>
+                  <span>Stad (niet verplicht)</span>
+                  <input type="text" name="city" placeholder="Brussel" />
+                </label>
+
+                <label>
+                  <span>E-mail</span>
+                  <input type="email" name="email" placeholder="jij@email.be" required />
+                </label>
+              </div>
+
+              <label>
+                <span>Interesses</span>
+                <input type="text" name="interests" placeholder="Koken, wandelen, film, muziek..." required />
+              </label>
+
+              <label>
+                <span>Vertel iets over jezelf *</span>
+                <textarea name="bio" rows="4" placeholder="Wat zoek je in een vriendschap?" required></textarea>
+              </label>
+
+              <button type="submit" class="button button-primary">Deze functie werkt nog niet</button>
+              <p class="form-note">* Ben je neurodivergent, heb je een beperking of is er iets 'anders' aan jou en weet je niet goed of je dit al zou vermelden? Lees er <a href="kiezen.html" class="form-note-link">hier</a> meer over.</p>
+              <p class="form-success" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="site-footer">
+      <div class="container footer-wrap">
+        <div>
+          <a href="#top" class="brand footer-brand" aria-label="Amixa home">
+            <img src="amixa_logo_transparent.svg" alt="Amixa logo" class="brand-logo" />
+          </a>
+          <p>Vriendschappen opbouwen in België, zonder druk en zonder dating.</p>
+        </div>
+
+        <div class="cta-box">
+          <h3>Word onderdeel van Amixa</h3>
+          <p>Ontdek nieuwe vriendengroepen, ontmoet mensen in jouw buurt en maak betekenisvolle connecties.</p>
+          <a href="mailto:info@amixa.be" class="button button-primary">info@amixa.be</a>
+          <p>Heb je <strong>ideeën</strong> om van Amixa een fijnere plek te maken? Mail zeker naar dit e-mailadres. Gelieve respectvol te schrijven.</p>
+        </div>
+      </div>
+
+      <div class="container bottom-bar">
+        <span>© <span id="year"></span> Amixa</span>
+        <span>Made for Belgium</span>
+      </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
