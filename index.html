@@ -20,11 +20,27 @@
   <body>
     <div class="dev-modal hidden" id="devModal" aria-live="polite">
       <div class="dev-modal-card">
-        <p class="dev-modal-kicker">Even een kleine update</p>
-        <h2>Leuk dat je dit al invulde, maar deze functie werkt nog niet.</h2>
-        <p>Feedback over deze eerste versie van Amixa? Mail naar info@amixa.be.</p>
-        <p>Kom later terug :)</p>
-        <button type="button" class="button button-primary" id="closeDevModal">Sluiten</button>
+        <p class="dev-modal-kicker">Amixa in opbouw</p>
+        <h2>Er wordt nog druk aan Amixa gewerkt.</h2>
+        <p>Laat je e-mailadres achter en hoor als eerste wanneer je kunt aansluiten bij de community.</p>
+
+        <form id="waitlist-form" class="waitlist-form">
+          <label for="waitlist-email">E-mailadres</label>
+          <input
+            id="waitlist-email"
+            name="waitlist-email"
+            type="email"
+            inputmode="email"
+            autocomplete="email"
+            placeholder="jij@email.be"
+            required
+          />
+          <button type="submit" class="button button-primary">Ik wil op de hoogte blijven</button>
+        </form>
+
+        <p id="waitlist-success" class="waitlist-success" aria-live="polite"></p>
+
+        <button type="button" class="button button-secondary close-button" id="closeDevModal">Sluiten</button>
       </div>
     </div>
 

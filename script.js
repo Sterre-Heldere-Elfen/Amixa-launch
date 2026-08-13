@@ -5,6 +5,28 @@ const profileForm = document.getElementById('profile-form');
 const contrastToggle = document.querySelector('.contrast-toggle');
 const devModal = document.getElementById('devModal');
 const closeDevModal = document.getElementById('closeDevModal');
+const waitlistForm = document.getElementById('waitlist-form');
+const waitlistEmailInput = document.getElementById('waitlist-email');
+const waitlistSuccess = document.getElementById('waitlist-success');
+
+const WAITLIST_KEY = 'amixa-waitlist';
+
+const saveEmailToWaitlist = (email) => {
+  const normalizedEmail = email.trim().toLowerCase();
+  if (!normalizedEmail) {
+    return false;
+  }
+
+  const savedEmails = JSON.parse(localStorage.getItem(WAITLIST_KEY) || '[]');
+  const uniqueEmails = Array.isArray(savedEmails) ? savedEmails : [];
+
+  if (!uniqueEmails.includes(normalizedEmail)) {
+    uniqueEmails.push(normalizedEmail);
+    localStorage.setItem(WAITLIST_KEY, JSON.stringify(uniqueEmails));
+  }
+
+  return true;
+};
 
 const firebaseConfig = {
   apiKey: 'YOUR_API_KEY',
@@ -60,20 +82,64 @@ if (devModal && closeDevModal) {
   });
 }
 
+if (waitlistForm && waitlistEmailInput && waitlistSuccess && devModal) {
+  waitlistForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const emailValue = waitlistEmailInput.value.trim();
+    const isSaved = saveEmailToWaitlist(emailValue);
+
+    if (!isSaved) {
+      waitlistEmailInput.focus();
+      return;
+    }
+
+    waitlistSuccess.textContent = 'Bedankt! Je e-mailadres is opgeslagen. We houden je op de hoogte.';
+    waitlistForm.reset();
+
+    window.setTimeout(() => {
+      devModal.classList.add('hidden');
+    }, 1800);
+  });
+}
+
 if (profileForm) {
   profileForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
+    const emailInput = profileForm.querySelector('input[name="email"]');
+    const successMessage = profileForm.querySelector('.form-success');
+
+    if (!emailInput) {
+      if (devModal) {
+        devModal.classList.remove('hidden');
+      }
+      return;
+    }
+
+    const emailValue = emailInput.value.trim();
+    const saved = saveEmailToWaitlist(emailValue);
+
+    if (!saved) {
+      emailInput.focus();
+      if (successMessage) {
+        successMessage.textContent = 'Voer een geldig e-mailadres in.';
+      }
+      return;
+    }
+
+    if (successMessage) {
+      successMessage.textContent = 'Bedankt! Je e-mailadres is opgeslagen en we houden je op de hoogte.';
+    }
+
     if (devModal) {
       devModal.classList.remove('hidden');
+      if (waitlistEmailInput) {
+        waitlistEmailInput.value = emailValue;
+      }
     }
 
-    const successMessage = profileForm.querySelector('.form-success');
-    if (successMessage) {
-      successMessage.textContent = '';
-    }
-
-    return;
+    profileForm.reset();
   });
 }
 
